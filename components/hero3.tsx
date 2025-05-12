@@ -19,7 +19,7 @@ const Hero3 = () => {
         {/* Map Embed */}
         <div className="w-full lg:w-2/3 h-[400px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.6869486880637!2d-95.68963172578295!3d29.699854534817476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640de4d3babd4ab%3A0xe696b1e0a5ac7ca7!2s7119%20FM%201464%2C%20Richmond%2C%20TX%2077407%2C%20USA!5e0!3m2!1sen!2s!4v1746811277659!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.972439010181!2d-95.68721000000001!3d29.700124700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640dfd3afca5287%3A0xa0b970859946ea50!2sAlpha%20Fix%20%7C%2015%20Minutes%20Repair!5e1!3m2!1sen!2s!4v1747087209293!5m2!1sen!2s"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -40,7 +40,7 @@ const Hero3 = () => {
             </div>
             <div className="text-left">
               <h3 className="text-lg font-bold text-black">Our Location</h3>
-              <p className="text-gray-700">7119 FM 1464, Richmond, TX 77407</p>
+              <p className="text-gray-700">7119 FM 1464, Richmond, TX 77407, United States</p>
             </div>
           </div>
 

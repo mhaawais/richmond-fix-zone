@@ -22,7 +22,7 @@ const Hero = () => {
               </button>
             </a>
             <a
-              href="https://www.google.com/maps/place/7119+FM+1464,+Richmond,+TX+77407,+USA/@29.6998545,-95.6896317,17z"
+              href="https://www.google.com/maps/place/Alpha+Fix+%7C+15+Minutes+Repair/@29.7001247,-95.68721,615m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8640dfd3afca5287:0xa0b970859946ea50!8m2!3d29.7001247!4d-95.68721!16s%2Fg%2F11p150q8pt!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
             >
