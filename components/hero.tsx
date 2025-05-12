@@ -6,7 +6,7 @@ import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="bg-[#7ed956] w-full">
+    <div className="bg-[#1c6fb5] w-full">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-6 sm:px-10 py-12 gap-8">
         
         {/* Left Content */}
@@ -15,14 +15,14 @@ const Hero = () => {
             No More Worrying <br /> About Smart Device <br /> Problems
           </h1>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="tel:(346) 424-8465">
+            <a href="tel:(346) 702-9909">
               <button className="bg-[#d6e9da] hover:bg-green-300 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:scale-105 transition">
                 <FaPhoneAlt />
                 Call Us
               </button>
             </a>
             <a
-              href="https://www.google.com/maps/place/17330+Spring+Cypress+Rd,+Cypress,+TX+77429,+USA"
+              href="https://www.google.com/maps/place/7119+FM+1464,+Richmond,+TX+77407,+USA/@29.6998545,-95.6896317,17z"
               target="_blank"
               rel="noopener noreferrer"
             >
