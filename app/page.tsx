@@ -5,6 +5,7 @@ import Hero1 from "@/components/hero1";
 import ChooseUs from "@/components/hero2";
 import Hero3 from "@/components/hero3";
 import Footer from "@/components/footer";
+import Quote from "@/components/quote";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Hero1 />
+      <Quote />
       <ChooseUs />
       <Hero3 />
       <Footer />

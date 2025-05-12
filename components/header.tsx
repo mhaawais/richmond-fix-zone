@@ -30,7 +30,7 @@ const Header = () => {
             className="relative h-full w-[160px] sm:w-[200px] focus:outline-none"
           >
             <Image
-              src="/assets/logo/fix-zone-2.jpeg"
+              src="/assets/logo/Alpha-fix.jpg"
               alt="Fix Zone Logo"
               fill
               className="object-left object-contain"
