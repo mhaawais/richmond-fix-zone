@@ -5,15 +5,15 @@ import Hero1 from "@/components/hero1";
 import ChooseUs from "@/components/hero2";
 import Hero3 from "@/components/hero3";
 import Footer from "@/components/footer";
-import Quote from "@/components/quote";
+import RepairWizard from "@/components/RepairWizard";
 
 export default function Home() {
   return (
-    <div className="bg-[#1c6fb5]">
+    <div>
       <Header />
       <Hero />
       <Hero1 />
-      <Quote />
+      <RepairWizard />
       <ChooseUs />
       <Hero3 />
       <Footer />
