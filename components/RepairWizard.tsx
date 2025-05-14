@@ -1,60 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
+import Quote from "./quote";
 
-// Common issues for all iPhone models
-const iphoneIssues = [
-  {
-    name: "Battery Replacement",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/short%20battery-100.jpg",
-  },
-  {
-    name: "Broken Screen",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/broken%20screen-100.jpg",
-  },
-  {
-    name: "Diagnostic",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Diagnostic-100.jpg",
-  },
-  {
-    name: "Water Damage",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/water%20damage-100.jpg",
-  },
-  {
-    name: "Front Camera",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/front%20camera-100.jpg",
-  },
-  {
-    name: "Charging Port",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/charging%20port-100.jpg",
-  },
-  {
-    name: "Back Glass",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Broken%20glass-100.jpg",
-  },
-  {
-    name: "Carrier Unlock",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Carrier%20Unlock-100.jpg",
-  },
-  {
-    name: "Not Turning On",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Not%20turning%20On-100.jpg",
-  },
-  {
-    name: "Back Camera",
-    image:
-      "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Back%20Camera-100.jpg",
-  },
-];
+interface Issue {
+  name: string;
+  image: string;
+}
+
+interface Model {
+  name: string;
+  image: string;
+}
+
+interface DeviceOption {
+  label: string;
+  image: string;
+  models: Model[];
+  issues: Issue[];
+}
 
 // Your full deviceOptions array here (shortened for clarity)
 const deviceOptions = [
@@ -249,6 +213,58 @@ const deviceOptions = [
           "https://portal.profiix.com/repairmodelimages/23-05-2022-16533112955S.png",
       },
     ],
+    issues: [
+      {
+        name: "Battery Replacement",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/short%20battery-100.jpg",
+      },
+      {
+        name: "Broken Screen",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/broken%20screen-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Diagnostic-100.jpg",
+      },
+      {
+        name: "Water Damage",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/water%20damage-100.jpg",
+      },
+      {
+        name: "Front Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/front%20camera-100.jpg",
+      },
+      {
+        name: "Charging Port",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/charging%20port-100.jpg",
+      },
+      {
+        name: "Back Glass",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Broken%20glass-100.jpg",
+      },
+      {
+        name: "Carrier Unlock",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Carrier%20Unlock-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Not%20turning%20On-100.jpg",
+      },
+      {
+        name: "Back Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Back%20Camera-100.jpg",
+      },
+    ],
   },
   {
     label: "Android Phone",
@@ -281,6 +297,58 @@ const deviceOptions = [
           "https://portal.profiix.com/repairbrandimages/23-05-2022-1653308208motorola-1.png",
       },
     ],
+    issues: [
+      {
+        name: "Battery Replacement",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/short%20battery-100.jpg",
+      },
+      {
+        name: "Broken Screen",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/broken%20screen-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Diagnostic-100.jpg",
+      },
+      {
+        name: "Water Damage",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/water%20damage-100.jpg",
+      },
+      {
+        name: "Front Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/front%20camera-100.jpg",
+      },
+      {
+        name: "Charging Port",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/charging%20port-100.jpg",
+      },
+      {
+        name: "Back Glass",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Broken%20glass-100.jpg",
+      },
+      {
+        name: "Carrier Unlock",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Carrier%20Unlock-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Not%20turning%20On-100.jpg",
+      },
+      {
+        name: "Back Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Smart%20phone/1x/Back%20Camera-100.jpg",
+      },
+    ],
   },
   {
     label: "Tablet",
@@ -303,12 +371,74 @@ const deviceOptions = [
           "https://portal.profiix.com/repairbrandimages/23-05-2022-1653308181oneplus-1.png",
       },
     ],
+    issues: [
+      {
+        name: "Water Damage",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/water%20damage-100.jpg",
+      },
+      {
+        name: "Batter Replacement",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/short%20battery%20life-100.jpg",
+      },
+      {
+        name: "Not Charging",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/not%20charging-100.jpg",
+      },
+      {
+        name: "Broken Screen",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/broken%20screen-100.jpg",
+      },
+      {
+        name: "Back Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/back%20camera-100.jpg",
+      },
+      {
+        name: "Front Camera",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/front%20camera-100.jpg",
+      },
+      {
+        name: "Home Button",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/home%20button-100.jpg",
+      },
+      {
+        name: "Updates/Restore",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/update%20And%20restore-100.jpg",
+      },
+      {
+        name: "Speaker",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/speaker-100.jpg",
+      },
+      {
+        name: "Bad Lcd",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/bad%20(lcd)-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/Diagnostic-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Tablet/1x/not%20turning%20on-100.jpg",
+      },
+    ],
   },
   {
     label: "Computer",
     image:
       "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/devices/Computer.png",
-      models: [
+    models: [
       {
         name: "PC Desktop",
         image:
@@ -340,12 +470,69 @@ const deviceOptions = [
           "https://portal.profiix.com/repairbrandimages/30-05-2022-1653907215250x250-copy.png",
       },
     ],
+    issues: [
+      {
+        name: "Virus",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/virs%20spyware-100.jpg",
+      },
+      {
+        name: "Not Booting",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/wont%20boot%20hard%20drive-100.jpg",
+      },
+      {
+        name: "Water Damage",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/water%20laptop-100.jpg",
+      },
+      {
+        name: "Data Recovery",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/memory%20upgrade-100.jpg",
+      },
+      {
+        name: "Hard Drive",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/disc%20drive-100.jpg",
+      },
+      {
+        name: "Broken Screen",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/broken%20screen-100.jpg",
+      },
+      {
+        name: "Battery",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/battery%20laptop-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/power%20button-100.jpg",
+      },
+      {
+        name: "Over Heat",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/over%20heat-100.jpg",
+      },
+      {
+        name: "Password Reset",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/passsward%20reset-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Computer/1x/Diagnostic-100.jpg",
+      },
+    ],
   },
   {
     label: "Gaming Console",
     image:
       "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/devices/Gaming-Console.png",
-       models: [
+    models: [
       {
         name: "Xbox",
         image:
@@ -362,81 +549,180 @@ const deviceOptions = [
           "https://portal.profiix.com/repairbrandimages/26-05-2022-1653563210intendo.png",
       },
     ],
+    issues: [
+      {
+        name: "Hard Drive",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Gaming%20Console/1x/WONT%20BOOT%20HARD%20DRIVE-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Gaming%20Console/1x/over%20heat-100.jpg",
+      },
+      {
+        name: "Video Input",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Gaming%20Console/1x/video%20input-100.jpg",
+      },
+      {
+        name: "Over Heat",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Gaming%20Console/1x/charging%20port-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Gaming%20Console/1x/software%20update-100.jpg",
+      },
+    ],
   },
   {
     label: "iWatch",
     image:
       "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/devices/iWatch.png",
-       models: [
+    models: [
       {
-        name: "",
+        name: "Apple Watch Series 10 Aluminium",
         image:
-          "",
+          "https://boostmyrepair.instantquoteform.com/repairmodelimages/05-11-2024-1730804217Apple-Watch-Series-10-Aluminum.png",
       },
       {
-        name: "",
+        name: "Apple Watch Series 10",
         image:
-          "",
+          "https://boostmyrepair.instantquoteform.com/repairmodelimages/05-11-2024-1730804195Apple-Watch-Series-10.png",
       },
       {
-        name: "",
+        name: "Apple Watch Series 9 Aluminium",
         image:
-          "",
+          "https://boostmyrepair.instantquoteform.com/repairmodelimages/05-11-2024-1730803484Apple-Watch-Series-9-Aluminum.png",
       },
       {
-        name: "",
+        name: "Apple Watch Series 19",
         image:
-          "",
+          "https://boostmyrepair.instantquoteform.com/repairmodelimages/05-11-2024-1730803449Apple-Watch-Series-9.png",
       },
       {
-        name: "",
+        name: "Apple Watch SE 2nd Gen",
         image:
-          "",
+          "https://t3portal.boostmyrepair.com/repairmodelimages/10-10-2023-1696924484Apple-Watch-SE-2nd-Gen.png",
       },
       {
-        name: "",
+        name: "Apple Watch Ultra",
         image:
-          "",
+          "https://t3portal.boostmyrepair.com/repairmodelimages/10-10-2023-1696924511Apple-Watch-Ultra.png",
       },
       {
-        name: "",
+        name: "Apple Watch Series 8",
         image:
-          "",
+          "https://t3portal.boostmyrepair.com/repairmodelimages/10-10-2023-1696924497Apple-Watch-Series-8.png",
       },
       {
-        name: "",
+        name: "Series 8",
         image:
-          "",
+          "https://techpro.instantquoteform.com/repairmodelimages/31-10-2022-1667208575second.png",
       },
       {
-        name: "",
+        name: "Series 7",
         image:
-          "",
+          "https://techpro.instantquoteform.com/repairmodelimages/31-10-2022-1667208594first.png",
       },
       {
-        name: "",
+        name: "Apple Watch",
         image:
-          "",
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568911apple-watch.png",
       },
       {
-        name: "",
+        name: "Series SE",
         image:
-          "",
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568888series-SE.png",
       },
       {
-        name: "",
+        name: "Series 5 44mm",
         image:
-          "",
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568849series-5-44mm.png",
       },
       {
-        name: "",
+        name: "Series 5 40mm",
         image:
-          "",
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568827series-5-40mm.png",
       },
       {
-        name: "",
+        name: "Series 4 44mm",
         image:
-          "",
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568780series-4-44mm.png",
+      },
+      {
+        name: "Series 4 40mm",
+        image:
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568756series-4-40mm.png",
+      },
+      {
+        name: "Series 3 42mm LTE",
+        image:
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568693series-3-42mm-LTE.png",
+      },
+      {
+        name: "Series 3 38mm LTE",
+        image:
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568663series-3-38mm-LTE.png",
+      },
+      {
+        name: "Series 42mm GPS",
+        image:
+          "https://portal.profiix.com/repairmodelimages/31-05-2022-1654012748series-3-38mm-LTE.png",
+      },
+      {
+        name: "Series 38mm GPS",
+        image:
+          "https://portal.profiix.com/repairmodelimages/31-05-2022-1654012716series-3-38mm-LTE.png",
+      },
+      {
+        name: "Series 2 42mm",
+        image:
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568354series-2-42mm-LTE.png",
+      },
+      {
+        name: "Series 2 38mm",
+        image:
+          "https://portal.profiix.com/repairmodelimages/31-05-2022-1654012553series-2-42mm-LTE.png",
+      },
+      {
+        name: "Series 1 42mm",
+        image:
+          "https://portal.profiix.com/repairmodelimages/26-05-2022-1653568215series-1-42mm.png",
+      },
+      {
+        name: "Series 1 38mm",
+        image:
+          "https://portal.profiix.com/repairmodelimages/31-05-2022-1654012432series-1-42mm.png",
+      },
+    ],
+    issues: [
+      {
+        name: "Battery",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/iWatch/1x/battery-100.jpg",
+      },
+      {
+        name: "Not Turning On",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/iWatch/1x/doesn't%20turn%20on-100.jpg",
+      },
+      {
+        name: "Screen",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/iWatch/1x/screen-100.jpg",
+      },
+      {
+        name: "Water Damage",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/iWatch/1x/water%20damage-100.jpg",
+      },
+      {
+        name: "Diagnostic",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/iWatch/1x/Diagnostic-100.jpg",
       },
     ],
   },
@@ -444,7 +730,7 @@ const deviceOptions = [
     label: "Unlock",
     image:
       "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/devices/Unlock.png",
-       models: [
+    models: [
       {
         name: "Carrier / SIM Unlock",
         image:
@@ -466,6 +752,13 @@ const deviceOptions = [
           "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/icons/Unlock/1x/Passcode%20-%20Pattern%20Unlock%20copy-100.jpg",
       },
     ],
+    issues: [
+      {
+        name: "Unlock Issues",
+        image:
+          "https://widget.xtremeiphonerepair.com/images/WidgetNewIcons/Widget%20New%20Icons/devices/Unlock.png",
+      },
+    ],
   },
 ];
 
@@ -473,10 +766,31 @@ const RepairWizard = () => {
   const [step, setStep] = useState(1);
   const [selectedDevice, setSelectedDevice] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
+  const [selectedIssue, setSelectedIssue] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    zip: "",
+    message: "",
+  });
 
   const handleDeviceSelect = (device: string) => {
     setSelectedDevice(device);
+    setSelectedModel("");
+    setSelectedIssue("");
     setStep(2);
+  };
+
+  const handleModelSelect = (model: string) => {
+    setSelectedModel(model);
+    setSelectedIssue("");
+    setStep(3);
+  };
+
+  const handleIssueSelect = (issue: string) => {
+    setSelectedIssue(issue);
+    setStep(4);
   };
 
   const navigateToStep = (targetStep: number) => {
@@ -566,10 +880,7 @@ const RepairWizard = () => {
               ?.models?.map((model) => (
                 <button
                   key={model.name}
-                  onClick={() => {
-                    setSelectedModel(model.name);
-                    setStep(3);
-                  }}
+                  onClick={() => handleModelSelect(model.name)}
                   className="flex flex-col items-center p-4 border shadow rounded hover:shadow-lg transition bg-white"
                 >
                   <img
@@ -606,185 +917,125 @@ const RepairWizard = () => {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {iphoneIssues.map((issue) => (
-              <div
-                key={issue.name}
-                className="flex flex-col items-center p-4 border shadow rounded hover:shadow-lg transition bg-white"
-              >
-                <img
-                  src={issue.image}
-                  alt={issue.name}
-                  className="h-20 object-contain mb-2"
-                />
-                <span className="font-medium text-gray-700 text-center">
-                  {issue.name}
-                </span>
+            {deviceOptions
+              .find((d) => d.label === selectedDevice)
+              ?.issues?.map((issue) => (
+                <button
+                  key={issue.name}
+                  onClick={() => handleIssueSelect(issue.name)}
+                  className="flex flex-col items-center p-4 border shadow rounded hover:shadow-lg transition bg-white"
+                >
+                  <img
+                    src={issue.image}
+                    alt={issue.name}
+                    className="h-20 object-contain mb-2"
+                  />
+                  <span className="font-medium text-gray-700 text-center">
+                    {issue.name}
+                  </span>
+                </button>
+              )) || (
+              <div className="col-span-full text-center text-gray-500 text-lg">
+                No issues available for this device.
               </div>
-            ))}
+            )}
+          </div>
+        </div>
+      )}
+
+      {step === 4 && (
+        <div className="min-h-screen bg-[#f9f9f9] px-4 py-6">
+          <div className="flex flex-col lg:flex-row gap-6 w-full">
+            {/* Quote Form Section */}
+            <div className="w-full lg:flex-[3]">
+              <Quote setStep={setStep} setFormData={setFormData} />
+            </div>
+
+            {/* Sidebar Section */}
+            <div className="bg-white p-6 rounded-xl w-full lg:w-[300px] shadow-md mt-6 lg:mt-0">
+              <h3 className="text-xl font-semibold text-orange-500 mb-4">
+                Selected Repair
+              </h3>
+              <div className="text-gray-700 mb-6 space-y-1">
+                <p>
+                  <strong>Device:</strong> {selectedDevice}
+                </p>
+                <p>
+                  <strong>Model:</strong> {selectedModel}
+                </p>
+                <p>
+                  <strong>Issue:</strong> {selectedIssue}
+                </p>
+              </div>
+              <h3 className="text-xl font-semibold text-orange-500 mb-4">
+                Why Choose US?
+              </h3>
+              <ul className="text-gray-700 space-y-2 text-sm">
+                <li>✅ Premium Quality Parts</li>
+                <li>✅ Certified Techs</li>
+                <li>✅ Lowest Prices in Town</li>
+              </ul>
+              <p className="text-xs text-gray-500 mt-4">
+                30 Day Warranty Included
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {step === 5 && (
+        <div className="min-h-screen flex items-center justify-center bg-[#f9f9f9] px-4 py-10">
+          <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-xl text-center">
+            <h2 className="text-3xl font-bold text-green-600 mb-4">
+              🎉 Thank You!
+            </h2>
+            <p className="text-gray-700 mb-6">
+              We have received your quote request. Our team is now reviewing
+              your application and will contact you soon!
+            </p>
+
+            <div className="text-left bg-blue-50 p-4 rounded-md mb-6 text-sm">
+              <p>
+                <strong>Device:</strong> {selectedDevice}
+              </p>
+              <p>
+                <strong>Model:</strong> {selectedModel}
+              </p>
+              <p>
+                <strong>Issue:</strong> {selectedIssue}
+              </p>
+              <p>
+                <strong>Name:</strong> {formData?.name}
+              </p>
+              <p>
+                <strong>Email:</strong> {formData?.email}
+              </p>
+              <p>
+                <strong>Phone:</strong> {formData?.phone}
+              </p>
+              <p>
+                <strong>Zip:</strong> {formData?.zip}
+              </p>
+              {formData?.message && (
+                <p>
+                  <strong>Message:</strong> {formData.message}
+                </p>
+              )}
+            </div>
+
+            <a
+              href="https://www.google.com/maps/place/Alpha+Fix+%7C+15+Minutes+Repair/@29.7001247,-95.68721,615m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8640dfd3afca5287:0xa0b970859946ea50!8m2!3d29.7001247!4d-95.68721!16s%2Fg%2F11p150q8pt!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition shadow">
+                📍 Get Location
+              </button>
+            </a>
           </div>
         </div>
       )}
     </div>
   );
 };
-
 export default RepairWizard;
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-// import React, { useState } from "react";
-
-// const RepairWizard = () => {
-//   const [step, setStep] = useState(1);
-//   const [device, setDevice] = useState("");
-//   const [model, setModel] = useState("");
-//   const [issue, setIssue] = useState("");
-//   const [form, setForm] = useState({ name: "", email: "", phone: "" });
-
-//   const handleNext = () => setStep(prev => prev + 1);
-//   const handleBack = () => setStep(prev => prev - 1);
-
-//   return (
-//     <div className="max-w-4xl mx-auto p-6">
-//       {/* Step Indicator */}
-//       <div className="flex justify-between mb-8">
-//         {["DEVICE", "MODEL", "ISSUE", "DETAILS", "GET QUOTE"].map((label, i) => (
-//           <div key={i} className={`text-sm font-medium ${step === i + 1 ? "text-blue-600" : "text-gray-400"}`}>
-//             {i + 1}. {label}
-//           </div>
-//         ))}
-//       </div>
-
-//       {/* Step 1: Device */}
-//       {step === 1 && (
-//         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-//           {["iPhone", "Android Phone", "Tablet", "Computer", "Gaming Console", "iWatch"].map(d => (
-//             <button
-//               key={d}
-//               className="border rounded p-4 shadow hover:bg-blue-100"
-//               onClick={() => { setDevice(d); handleNext(); }}
-//             >
-//               {d}
-//             </button>
-//           ))}
-//         </div>
-//       )}
-
-//       {/* Step 2: Model */}
-//       {step === 2 && (
-//         <div>
-//           <h2 className="text-xl font-bold mb-4">Select Model for {device}</h2>
-//           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-//             {(device === "iPhone"
-//               ? ["iPhone 16 Pro Max", "iPhone 16", "iPhone 15"]
-//               : device === "Android Phone"
-//               ? ["Samsung S23", "OnePlus 11", "Pixel 7"]
-//               : device === "Tablet"
-//               ? ["iPad Pro", "Galaxy Tab S8"]
-//               : device === "Computer"
-//               ? ["MacBook Pro", "Dell XPS", "HP Spectre"]
-//               : device === "Gaming Console"
-//               ? ["PS5", "Xbox Series X", "Nintendo Switch"]
-//               : device === "iWatch"
-//               ? ["Watch Ultra", "Watch Series 8"]
-//               : []
-//             ).map(m => (
-//               <button
-//                 key={m}
-//                 className="border rounded p-4 shadow hover:bg-blue-100"
-//                 onClick={() => { setModel(m); handleNext(); }}
-//               >
-//                 {m}
-//               </button>
-//             ))}
-//           </div>
-//           <button onClick={handleBack} className="mt-4 text-blue-500">← Back</button>
-//         </div>
-//       )}
-
-//       {/* Step 3: Issue */}
-//       {step === 3 && (
-//         <div>
-//           <h2 className="text-xl font-bold mb-4">Select Issue</h2>
-//           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-//             {["Battery", "Screen", "Camera", "Water Damage", "Speaker", "Other"].map(i => (
-//               <button
-//                 key={i}
-//                 className="border rounded p-4 shadow hover:bg-blue-100"
-//                 onClick={() => { setIssue(i); handleNext(); }}
-//               >
-//                 {i}
-//               </button>
-//             ))}
-//           </div>
-//           <button onClick={handleBack} className="mt-4 text-blue-500">← Back</button>
-//         </div>
-//       )}
-
-//       {/* Step 4: Details Form */}
-//       {step === 4 && (
-//         <div>
-//           <h2 className="text-xl font-bold mb-4">Your Details</h2>
-//           <p className="mb-2">Device: <strong>{device}</strong></p>
-//           <p className="mb-2">Model: <strong>{model}</strong></p>
-//           <p className="mb-4">Issue: <strong>{issue}</strong></p>
-//           <div className="space-y-4">
-//             <input
-//               type="text"
-//               placeholder="Name"
-//               className="border p-2 w-full"
-//               value={form.name}
-//               onChange={e => setForm({ ...form, name: e.target.value })}
-//             />
-//             <input
-//               type="email"
-//               placeholder="Email"
-//               className="border p-2 w-full"
-//               value={form.email}
-//               onChange={e => setForm({ ...form, email: e.target.value })}
-//             />
-//             <input
-//               type="tel"
-//               placeholder="Phone"
-//               className="border p-2 w-full"
-//               value={form.phone}
-//               onChange={e => setForm({ ...form, phone: e.target.value })}
-//             />
-//           </div>
-//           <div className="flex gap-4 mt-6">
-//             <button onClick={handleBack} className="text-blue-500">← Back</button>
-//             <button onClick={handleNext} className="bg-blue-600 text-white px-6 py-2 rounded">Next</button>
-//           </div>
-//         </div>
-//       )}
-
-//       {/* Step 5: Quote Submitted */}
-//       {step === 5 && (
-//         <div className="text-center">
-//           <h2 className="text-2xl font-bold mb-4">Quote Request Sent!</h2>
-//           <p className="mb-4">Thank you, {form.name}. Our team will contact you soon.</p>
-//           <p className="mb-6">Or visit us directly for a quick fix!</p>
-//           <a
-//             href="https://maps.google.com"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700"
-//           >
-//             Get Directions
-//           </a>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default RepairWizard;

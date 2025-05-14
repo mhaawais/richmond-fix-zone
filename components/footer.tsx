@@ -26,7 +26,7 @@ const Footer = () => {
       {/* Divider & Bottom Section */}
       <div className="text-white text-sm">
         <p className="mb-2">
-          © Copyright <span className="font-bold">FIXZONE</span> All Rights Reserved
+          © Copyright <span className="font-bold">ALPHA-FIX</span> All Rights Reserved
         </p>
         {/* <p className='text-black'>
           <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">Terms & Conditions</a>
